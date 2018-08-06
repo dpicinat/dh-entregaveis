@@ -1,0 +1,1 @@
+{{$ator->first_name . " " . $ator->last_name. " " . $ator->rating}}
