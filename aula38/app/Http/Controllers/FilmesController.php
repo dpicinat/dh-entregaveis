@@ -15,8 +15,10 @@ class FilmesController extends Controller
    
     public function AdicionarFilme(Request $request) {
         $this->validate($request,[
-            'title'=> 'required|max:255',
-            'awards'=> 'numeric|max:2',
+            'título'=> 'required|max:10',
+            'classsificacao'=> 'numeric|max:2',
+            'premios'=> 'numeric|max:2',
+            'duracao'=> 'numeric|max:2',
         ]);  
         
         return view('form');
