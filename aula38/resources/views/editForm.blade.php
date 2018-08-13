@@ -38,7 +38,7 @@
       <title>Adicionar Ator</title>
   </head>
   <body>
-      <h1 align="center">Formulário Atores</h1>
+      <h1 align="center">Formulário Editar Atores</h1>
       <form id="adicionarAtor" name="adicionarAtor" method="POST" action="/ator/edit/{{ $ator->id }}">
         {{csrf_field()}}
         {{method_field('PUT')}}
@@ -53,7 +53,18 @@
           <div class="form-group col-6 m-auto">
               <label for="rating">Classificação</label>
               <input type="text" class="form-control" name="rating"  value="{{ $ator->rating }}"/>
-         </div>
+          </div>
+          <div class="form-group col-6 m-auto">
+            <label for="rating">Filme Favorito do Ator</label>
+            {{-- Exerc aula39 Ex1S --}}
+            <select class="form-control" name="favorite_movie_id" id="">
+                @foreach($tabela_movies as $key => $value)
+                    <option value="$tabela_movies [$key]['title']">{{$tabela_movies [$key]['title']}}</option>
+                @endforeach
+            </select>
+            
+            
+          </div>
           
           
           <br>

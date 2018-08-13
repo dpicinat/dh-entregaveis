@@ -13,6 +13,7 @@ class FilmesController extends Controller
     }
    
    
+   
     public function AdicionarFilme(Request $request) {
         $this->validate($request,[
             'título'=> 'required|max:10',

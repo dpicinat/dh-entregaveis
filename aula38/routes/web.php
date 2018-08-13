@@ -24,7 +24,7 @@ Route::get('/filme', 'FilmesController@filme');
 //lista atores
 Route::get('/atores','AtoresController@directory');
 //cadastrar
-Route::post('/actors/add','AtoresController@AdicionarAtor');
+Route::get('/actors/add','AtoresController@AdicionarAtor');
 //exibir
 Route::get('/actors', 'AtoresController@Ator');
 

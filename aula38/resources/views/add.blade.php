@@ -38,7 +38,7 @@
       <title>Adicionar Ator</title>
   </head>
   <body>
-      <h1 align="center">Formulário Editar Atores</h1>
+      <h1 align="center">Adicionar Atores</h1>
       <form id="adicionarAtor" name="adicionarAtor" method="POST" action="/actors/add">
         {{csrf_field()}}
         <div class="form-group col-6 m-auto">
@@ -53,8 +53,16 @@
               <label for="rating">Classificação</label>
               <input type="text" class="form-control" name="rating" id="rating" value"{{ old('rating') }}"/>
           </div>
+          <div class="form-group col-6 m-auto">
+            <label for="rating">Data Criação</label>
+            <input type="date" class="form-control" name="created_at" id="rating" value"{{ old('created_at') }}"/>
+          </div>
     
-          
+          <select class="form-control" name="favorite_movie_id" >
+                @foreach($favorite_movie_id as $key => $value)
+                    <option value="$Ator->id">{{$ator->favorite_movie_id}}</option>
+                @endforeach
+            </select>
           <br>
           <div class="form-group col-6 m-auto">
             <input type="submit" value="Adicionar Ator" name="submit" class="btn btn-primary"/>
