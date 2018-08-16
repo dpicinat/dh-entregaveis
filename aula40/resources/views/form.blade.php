@@ -70,9 +70,12 @@
                     <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                   @endfor
                 </select>
+                {{-- Aula40 - EX1D --}}
+                <label>Generos</label>
                 <select class="form-control" name="Generos" id="">
-                    @foreach($tabela_genres as $key => $value)
-                        <option value="$tabela_genres [$key]['name']">{{$tabela_genres [$key]['name']}}</option>
+                        <option value="">Escolha o Genero</option>
+                    @foreach($genero as $key => $value)
+                        <option value="$genero [$key]['name']">{{$genero [$key]['name']}}</option>
                     @endforeach
                 </select>
               </div>
