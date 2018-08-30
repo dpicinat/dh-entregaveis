@@ -15,13 +15,13 @@ class filmes extends Model
     ];
 
     public function genres(){
-        //Ex1D
+        
         return $this->hasMany(Genre::class, 'id', 'genre_id');
 
     }
 
     public function atores(){
-        //Ex1D
+        
         return $this->belongsToMany(actors::class,'actor_movie', 'movie_id', 'actor_id');
 
     }

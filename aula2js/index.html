@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Javascript integrado ao html</h1>
+
+    <script>
+    // window.onload = function() {
+    //     let nome = prompt('“Bem-vindo, Daniel”,') 
+    //     alert('Página carregada')
+    // //isso é executado quando a página é carregada
+    // };
+
+        
+        //Exaula2js - ex2
+        // let nome = prompt('Bem-vindo, ') 
+        // let alerta = alert('Bem Vindo'+ " " + nome)
+        // let idade = confirm('Você tem mais de 18 anos?')
+        // //Exaula2js - ex3
+        //     if (idade){
+        //         location = "http://www.disney.com.br"
+        //     }
+        //Exaula2js - ex4
+        // // window.onload = function() {
+        // //     console.log("A URL atual é: "+ location.href);
+        //    }
+    
+    function perguntar(){
+        let numero1 = prompt('Digite um número')
+        let numero2 = prompt('Agora, digite outro número')
+        let confirma = confirm('Tem certeza que quer esses números?')
+
+        if (confirma){
+            let numeroMaior = parseInt(numero1) > parseInt(numero2)
+                ? numero1
+                : numero2
+            alert('Numero maior é:' +numeroMaior)
+        }else{
+            perguntar()
+        }
+    }
+    perguntar()
+
+
+
+    </script>
+
+    <script src="main.js"></script>
+</body>
+</html>
