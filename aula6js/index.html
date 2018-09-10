@@ -1,0 +1,90 @@
+<form >
+    <select name"paises" id="selectPaises"></select>
+    <select name"paises" id="unidadesOrganizacionais"></select>
+</form>
+
+
+<body>
+    
+
+
+
+
+Exercicios
+<script>
+//JSON exercicios
+    // let dados = '{"prop1": "casamento" , "prop2": "Fiori"}'
+    // let objetoEx1 = JSON.parse(dadosApi)
+    //     console.log(objetoEx1)
+    // let objetoStringEx1 = JSON.stringify(objetoEx1)
+
+    
+    let amigos = '{"numero": 4, "nomes":["Thomaz", "Thiago", "Lika", "Truta"]}'
+
+    let galera = JSON.parse(amigos)
+
+    console.log(galera.numero)
+    let galeraString = JSON.stringify(galera)
+    console.log(galeraString)
+
+    let carro = [{nome: "Daniel" , Idade: 100}, {nome: "Mané" , Idade: 200}, {nome: "Tiririca" , Idade: 300}]
+    let objetoString = JSON.stringify(carro)
+        console.log(objetoString)
+    let objetoGeral= JSON.parse(objetoString)
+        console.log(objetoGeral)
+
+
+//AJAX 4
+    
+    // let xmlhttp = new XMLHttpRequest()
+
+    // xmlhttp.onreadystatechange = function() {
+    //     if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+    //     let resposta = JSON.parse(xmlhttp.responseText)
+    //     console.log(resposta); 
+    // //Meu código
+    //     } 
+    // }
+    // xmlhttp.open("GET","http://pilote.techo.org/?do=api.getPaises", true)
+    // xmlhttp.send()
+  
+
+        
+
+//AJAX 5
+    
+    let xmlhttp = new XMLHttpRequest()
+
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+        let resposta = JSON.parse(xmlhttp.responseText)
+        let respostaEmArray = Object.entries(reposta.contenido)
+        // console.log(resposta.contenido)
+    //Ex7
+        let opcao = ""
+
+        respostaEmArray.forEach(function(item){
+        // let pais = item[0]
+        // let id = item[1]
+        opcao += "<option>" + item + "</option>"
+        })
+
+        selectPaises.innerHTML = opcao
+
+        console.log(respostaEmArray)
+        
+        } 
+    }
+    xmlhttp.open("GET","http://pilote.techo.org/?do=api.getPaises", true)
+    xmlhttp.send()
+
+//AJAX 7
+
+
+
+    
+</script><br><br>
+
+
+
+</body>

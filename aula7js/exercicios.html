@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+ 
+            <button type="button" id="botao">Clique em mim</button>
+<script>
+    let cor = 'blue'
+    let vezes = 0
+
+    function ex1(){
+        alert("Você clicou em mim!")
+
+        if(cor === 'red'){
+            cor = 'blue'
+        }else{
+            cor ='red'
+        }
+    }
+
+document.body.style.background = cor
+
+
+</script>
+
+
+
+
+
+    <script>
+        //ex1a e ex1b
+        let body =  document.querySelector("body")
+        let cor = false
+        function ex1(){
+            botao.addEventListener("click", function(){
+            alert("Você clicou em mim!")
+            if(!cor){
+                cor = true
+                body.style.background = "red"
+            }else{
+                cor = false
+                body.style.background = "blue"
+            }
+         })
+        //ex1c
+            let paragrafo = document.createElement("p")
+            body.appendChild(paragrafo)
+
+            let conta = 0
+            botao.addEventListener("click", function(){
+                conta ++
+                paragrafo.innerHTML = "Clique número: " + conta
+            })
+        }
+
+        //S=83  p =80
+        let stop = botao.removeEventListener('click',ex1)
+        let play = botao.addEventListener('click',ex1)
+        document.onkeydown = function(stop){
+            if(stop.keyCode === 83){
+		    alert('A tecla "S" foi pressionada')
+            }
+            if(stop.keyCode === 80){
+		    alert('A tecla "P" foi pressionada')
+            }
+        }
+        
+
+
+
+        
+    
+
+
+
+        
+        
+        
+    
+    </script>
+</body>
+</html>

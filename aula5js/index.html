@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EXERCICIOS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!-- <script src="main.js"></script> -->
+</head>
+<body>
+
+        <form id="form">
+            Nome <input type="text" name="nome" placeholder="Nome">
+            <br><br>
+            Email <input type="text" name="email" placeholder="Email">
+            <br><br>
+            <label>
+                <input type="radio" name="sexo" value="M"> Masculino  
+            </label>
+            <label>
+                    <input type="radio" name="sexo" value="F">  Feminino 
+            </label>
+            <br><br>
+            Deseja receber notícias sobre o site?
+            <label for="">
+                <input type="checkbox" name="sexo" value="S"> Sim 
+            </label>
+            <label for="">
+                    <input type="checkbox" name="sexo" value="N"> Não 
+                </label>
+            <br><br>
+            Senha <input type="text" name="senha">   
+            Confirme Senha<input type="text" name="confirmar">   
+            <label>
+                    <button type:"submit">Enviar</button>
+            </label>
+            <br><br>
+            <label>
+                    <button type:"submit">Apagar</button>
+            </label>
+            <label>
+                    <button type:"submit">Resultado</button>
+            </label>
+        </form>
+
+   <p id="mensagem"></p>
+
+   <script>
+    
+      form.onsubmit = function(event){
+           event.preventDefault()
+        
+        let msgfinal = ''
+        let nome = this['nome'].value
+        let email = this['email'].value
+        let sexo = this['sexo'].value
+        let senha = this['senha'].value
+        let confirmar = this['confirmar'].value
+
+        if(!nome){
+            msgfinal = msgfinal + 'Preencha campo nome<br>'
+        }
+        if(!email){
+            msgfinal = msgfinal + 'Preencha campo email<br>'
+        }
+        if(!sexo){
+            msgfinal = msgfinal + 'Preencha campo sexo<br>'
+        }
+        if(!senha){
+            msgfinal = msgfinal + 'Preencha campo senha<br>'
+        }
+        if(!confirmar){
+            msgfinal = msgfinal + 'Preencha campo confirmar<br>'
+        }
+        if (senha != confirmar){
+            msgfinal = 'Repita a senha corretamente<br>'
+        }
+        mensagem.innerHTML = msgfinal
+       }
+
+
+   </script>
+    
+</body>
+</html>
